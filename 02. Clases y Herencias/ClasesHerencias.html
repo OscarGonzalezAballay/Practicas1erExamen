@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1er Examen</title>
+</head>
+<body>
+    <h1>Clases y Herencias</h1>
+
+</body>
+
+</html>
+
+<script>
+//Clase padre
+    class Animal{
+        constructor(nombre, edad){
+            this.nombre = nombre;
+            this.edad = edad;
+        }
+        hacerSonido(){
+            console.log(`${this.nombre} hace un sonido.`)
+        }
+    }
+    const loro = new Animal("Pepito", 5);
+    loro.hacerSonido();
+    console.log(`El animal se llama ${loro.nombre} y tiene ${loro.edad} años.`);
+
+//Clase Hija (Herencia)
+    class Perro extends Animal {
+        ladrar(){
+            console.log(`${this.nombre} dice guau guau.`)
+        }
+    }
+    const miPerro = new Perro(`Chocolate`)
+    miPerro.hacerSonido();
+    miPerro.ladrar();
+
+//Polimorfismo.
+    class Gato extends Animal {
+        constructor(nombre, edad){
+            super(nombre, edad);
+        }
+        hacerSonido(){
+            return `${this.nombre} dice Miau.`;
+        }
+    }
+    const miGato = new Gato(`Canela`, 8)
+    console.log(miGato.hacerSonido());
+</script>

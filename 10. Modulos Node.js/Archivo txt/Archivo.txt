@@ -1,0 +1,1 @@
+Hola, mi nombre es Oscar, y este es un archivo de ejemplo que quiero leer desde Node.js.

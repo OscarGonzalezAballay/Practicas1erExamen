@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1er Examen</title>
+</head>
+<body>
+    <h1>Callbacks</h1>
+
+</body>
+
+</html>
+
+<script>
+    function procesarArreglo(arreglo, callback){
+        for (let i = 0; i < arreglo.length; i++){
+            callback(arreglo[i]);
+        }
+    }
+
+    const arreglo = [1, 2, 3, 4, 5];
+    procesarArreglo(arreglo, function(elemento){
+        console.log(elemento * 2);
+    })
+</script>

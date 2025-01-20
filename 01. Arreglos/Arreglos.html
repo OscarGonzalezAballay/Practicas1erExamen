@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1er Examen</title>
+</head>
+<body>
+    <h1>Arreglos</h1>
+
+</body>
+
+</html>
+
+<script>
+//Suma de elementos.
+    const numeros = [1, 2, 3, 4, 5]
+
+        function sumaTotal(array) {
+        let total = 0
+        for (let i = 0; i < array.length; i++) {
+            total += array[i]
+        }
+        return total;
+    }
+    const respuesta = sumaTotal (numeros);
+    console.log("El resultado es:", respuesta);
+
+//Filtro de números pares.    
+    const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        function obtenerPares(array) {
+            const pares = array.filter(numero => numero % 2 === 0);
+            console.log(pares);
+        }
+        obtenerPares(array);
+
+//Inversion de arreglo.
+    const invertido = arregloInvertido([1, 2, 3, 4, 5, 6, 7])
+        
+        function arregloInvertido(array) {
+            let resultado = array.reverse();
+            return resultado;
+        }
+        console.log(invertido);
+</script>

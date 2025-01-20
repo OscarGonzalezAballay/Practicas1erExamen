@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1er Examen</title>
+</head>
+<body>
+    <h1>Pilas</h1>
+
+    
+</body>
+</html>
+
+<script>
+    class Pila {
+        constructor(capacidad) {
+            this.capacidad = capacidad;
+            this.arreglo = new Array(capacidad).fill(null);
+            this.tope = -1;
+        }
+
+        push(elemento) {
+            if (this.tope >= this.capacidad - 1) {
+                throw new Error("La pila está llena.");
+            }
+            this.tope += 1;
+            this.arreglo[this.tope] = elemento;
+            console.log(`Push: ${elemento}. Estado actual: [${this.arreglo}]`);
+        }
+
+        pop() {
+            if (this.tope === -1) {
+                throw new Error("La pila está vacía.");
+            }
+            const elemento = this.arreglo[this.tope];
+            this.arreglo[this.tope] = null;
+            this.tope -= 1;
+            console.log(`Pop: ${elemento}. Estado actual: [${this.arreglo}]`);
+            return elemento;
+        }
+
+        peek() {
+            if (this.tope === -1) {
+                throw new Error("La pila está vacía.");
+            }
+            console.log(`Peek: ${this.arreglo[this.tope]}`);
+            return this.arreglo[this.tope];
+        }
+
+        estaVacia() {
+            return this.tope === -1;
+        }
+
+        estaLlena() {
+            return this.tope === this.capacidad - 1;
+        }
+    }
+
+    try {
+        const pila = new Pila(5);
+        pila.push(10);
+        pila.push(20);
+        pila.push(30);
+        pila.peek();
+        pila.pop();
+        pila.peek();
+        pila.push(40);
+        pila.push(50);
+        pila.push(60);
+        pila.push(70);
+    } catch (error) {
+        console.error(error.message);
+    }
+</script>
